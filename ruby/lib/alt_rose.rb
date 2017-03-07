@@ -14,7 +14,7 @@ class AltRose
   end
 
   def update_sell_in
-     @sell_in -= 1
+     @sell_in -= 1 if item.name != 'Sulfuras, Hand of Ragnaros'
   end
 
   def appreciation_value
@@ -30,7 +30,7 @@ class AltRose
   end
 
   def check_sell_in
-    item.sell_in < 0 ? @multiple *= 2 : @multiple
+    item.sell_in < 0 && item.name != 'Aged Brie' ? @multiple *= 2 : @multiple
   end
 
   def update_backstage_passes_specially
